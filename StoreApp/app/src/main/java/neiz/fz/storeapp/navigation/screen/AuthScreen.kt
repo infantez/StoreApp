@@ -6,8 +6,5 @@ sealed class AuthScreen (val route: String) {
 
     data object Register: AuthScreen(route = "register")
 
-    data object Home: AuthScreen(route = "home")
-
-    data object Roles: AuthScreen(route = "roles")
 
 }

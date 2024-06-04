@@ -96,6 +96,9 @@ dependencies {
 
     // DATA STORE
     implementation("androidx.datastore:datastore-preferences:1.1.1")
+
+    // ASYNC IMAGE
+    implementation("io.coil-kt:coil-compose:2.2.2")
 }
 
 // Allow references to generated code

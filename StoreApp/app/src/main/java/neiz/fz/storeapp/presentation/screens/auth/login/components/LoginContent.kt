@@ -44,16 +44,18 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import neiz.fz.storeapp.R
+import neiz.fz.storeapp.navigation.screen.AuthScreen
 import neiz.fz.storeapp.presentation.components.ButtonComponent
 import neiz.fz.storeapp.presentation.components.TextFieldComponent
 import neiz.fz.storeapp.presentation.screens.auth.login.LoginViewModel
 
 @Composable
 fun LoginContent(
+    navController: NavHostController,
     paddingValues: PaddingValues,
-    onClick:()->Unit,
-    vm:LoginViewModel = hiltViewModel()
+    vm: LoginViewModel = hiltViewModel()
 ) {
 
     val state = vm.state
@@ -214,7 +216,7 @@ fun LoginContent(
 
                         Text(
                             modifier = Modifier.clickable {
-                                onClick()
+                                navController.navigate(route = AuthScreen.Register.route)
                             },
                             text = "Registrate",
                             style = TextStyle(

@@ -12,13 +12,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBarComponent(
     title : String,
-    onClick:()->Unit,
-    upAvailable: Boolean = false
+    upAvailable: Boolean = false,
+    navController: NavHostController? = null // null
 ) {
     TopAppBar(
         title = {
@@ -37,7 +38,7 @@ fun TopAppBarComponent(
             if(upAvailable) {
                 IconButton(
                     onClick = {
-                        onClick()
+                        navController?.popBackStack()
                     }
                 ) {
                     Icon(

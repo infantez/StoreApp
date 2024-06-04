@@ -10,6 +10,7 @@ import neiz.fz.storeapp.domain.repository.AuthRepository
 import neiz.fz.storeapp.domain.useCase.auth.AuthUseCase
 import neiz.fz.storeapp.domain.useCase.auth.GetSessionDataUseCase
 import neiz.fz.storeapp.domain.useCase.auth.LoginUseCase
+import neiz.fz.storeapp.domain.useCase.auth.LogoutUseCase
 import neiz.fz.storeapp.domain.useCase.auth.RegisterUseCase
 import neiz.fz.storeapp.domain.useCase.auth.SaveSessionUseCase
 
@@ -22,7 +23,8 @@ object UseCaseModule {
         login = LoginUseCase(authRepository),
         register = RegisterUseCase(authRepository),
         saveSession = SaveSessionUseCase(authRepository),
-        getSessionData = GetSessionDataUseCase(authRepository)
+        getSessionData = GetSessionDataUseCase(authRepository),
+        logout = LogoutUseCase(authRepository)
     )
 
 }
